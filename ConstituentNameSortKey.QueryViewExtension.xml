@@ -1,0 +1,19 @@
+﻿<QueryViewSpecExtension
+	xmlns="bb_appfx_queryview"
+	xmlns:c="bb_appfx_commontypes"
+	ID="17945cd8-0115-419e-bfb6-5cc1f391106b"
+	Name="DH - CM - Constituent Name Sort Key Query Extension"
+	Description="An extension to the Constituents query view" 
+	Author="Dignity Health"
+	ExtendsViewName="V_QUERY_CONSTITUENT"
+	>
+
+	<AddFields>
+		<AddField>
+			<SelectClause AliasAs="SORTKEY">SELECT LTRIM(RTRIM(KEYNAME)) + LTRIM(RTRIM(FIRSTNAME)) + LTRIM(RTRIM(MIDDLENAME)) AS SORTKEY FROM CONSTITUENT C
+      where [C].[ID] = [CONSTITUENT].[ID]</SelectClause>
+			<OutputField Name="SORTKEY" Caption="Sort Key" />
+		</AddField>
+	</AddFields>
+
+</QueryViewSpecExtension>
