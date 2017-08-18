@@ -10,8 +10,9 @@
 
 	<AddFields>
 		<AddField>
-			<SelectClause AliasAs="SORTKEY">SELECT LTRIM(RTRIM(KEYNAME)) + LTRIM(RTRIM(FIRSTNAME)) + LTRIM(RTRIM(MIDDLENAME)) AS SORTKEY FROM CONSTITUENT C
-      where [C].[ID] = [CONSTITUENT].[ID]</SelectClause>
+			<SelectClause AliasAs="SORTKEY">
+				LTRIM(RTRIM(CONSTITUENT.KEYNAME)) + LTRIM(RTRIM(CONSTITUENT.FIRSTNAME)) + LTRIM(RTRIM(CONSTITUENT.MIDDLENAME))
+			</SelectClause>
 			<OutputField Name="SORTKEY" Caption="Sort Key" />
 		</AddField>
 	</AddFields>
